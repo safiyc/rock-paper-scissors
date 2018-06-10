@@ -5,8 +5,8 @@
     </head>
     <body>
         
-
         <script>
+            // Function created using Function Declaration method
             function computerPlay () {
                 let cpuMove = Math.floor(Math.random() * 3) + 1;
                 
@@ -19,7 +19,23 @@
                 }
             }
 
-            console.log(computerPlay())
+            // console.log(computerPlay());
+
+            // Function created using Function Expression
+            function gameRound (playerSelection, computerSelection) {
+                if ((playerSelection === "rock" && computerSelection === "Scissors") || (playerSelection === "paper" && computerSelection === "Rock") || (playerSelection === "scissors" && computerSelection === "Paper")) {
+                    return "You win.";
+                } else if ((playerSelection === "rock" && computerSelection === "Paper") || (playerSelection === "paper" && computerSelection === "Scissors") || (playerSelection === "scissors" && computerSelection === "Rock")) {
+                    return "You lose.";
+                } else {
+                    return "It's a draw.";
+                }
+            }
+
+            let playerSelection = "rock";
+            let computerSelection = computerPlay();
+
+            console.log(gameRound(playerSelection, computerSelection));
 
         </script>
     </body>
