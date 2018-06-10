@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head>
+        <title>Rock Paper Scissors</title>
+    </head>
+    <body>
+        
+
+        <script>
+            function computerPlay () {
+                let cpuMove = Math.floor(Math.random() * 3) + 1;
+                
+                if(cpuMove === 1) {
+                    return "Rock";
+                } else if (cpuMove === 2) {
+                    return "Paper";
+                } else {
+                    return "Scissors";
+                }
+            }
+
+            console.log(computerPlay())
+
+        </script>
+    </body>
+</html>
