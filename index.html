@@ -22,20 +22,24 @@
             // console.log(computerPlay());
 
             // Function created using Function Expression
-            function gameRound (playerSelection, computerSelection) {
-                if ((playerSelection === "rock" && computerSelection === "Scissors") || (playerSelection === "paper" && computerSelection === "Rock") || (playerSelection === "scissors" && computerSelection === "Paper")) {
+            let gameRound = function (playerSelection, computerSelection) {
+                let playerSelectionCasing = playerSelection.toLowerCase();
+
+                if (playerSelectionCasing !== "rock" && playerSelectionCasing !== "paper" && playerSelectionCasing !== "scissors") {
+                    return "Please choose rock, paper or scissors";
+                } else if ((playerSelectionCasing === "rock" && computerSelection === "Scissors") || (playerSelectionCasing === "paper" && computerSelection === "Rock") || (playerSelectionCasing === "scissors" && computerSelection === "Paper")) {
                     return "You win.";
-                } else if ((playerSelection === "rock" && computerSelection === "Paper") || (playerSelection === "paper" && computerSelection === "Scissors") || (playerSelection === "scissors" && computerSelection === "Rock")) {
+                } else if ((playerSelectionCasing === "rock" && computerSelection === "Paper") || (playerSelectionCasing === "paper" && computerSelection === "Scissors") || (playerSelectionCasing === "scissors" && computerSelection === "Rock")) {
                     return "You lose.";
                 } else {
                     return "It's a draw.";
                 }
             }
 
-            let playerSelection = "rock";
+            // let playerSelection = "rock";
             let computerSelection = computerPlay();
 
-            console.log(gameRound(playerSelection, computerSelection));
+            console.log(gameRound("Rock", computerSelection));
 
         </script>
     </body>
