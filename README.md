@@ -1,1 +1,1 @@
-This rock, paper, scissors program done in JavaScript lets a user play the popular kids' game with a computer player.
+This rock, paper, scissors program done in JavaScript lets a user play the popular game with a computer player.

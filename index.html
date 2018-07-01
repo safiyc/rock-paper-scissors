@@ -4,43 +4,80 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        
         <script>
-            // Function created using Function Declaration method
+            // Why cant roundPlayResult, playerScore and cpuScore be nested inside function game()???
+            let roundPlayResult;
+            let playerScore = 0;
+            let cpuScore = 0;
+        
+            function game () {
+                for (let i = 0; i < 5; i++) {
+                    let playerSelection = prompt("roundPlay: rock, paper or scissors");
+                    let computerSelection = computerPlay();
+                    roundPlay (playerSelection, computerSelection);
+                    roundScore();
+                    console.log("Round: ", i + 1);
+                    console.log("playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
+                    console.log("function roundPlay: ", roundPlay(playerSelection, computerSelection));
+                    console.log("roundPlayResult: ", roundPlayResult);
+                    console.log("playerScore: ", playerScore, "cpuScore: ", cpuScore);
+                    
+                    if (roundPlayResult === ("Please choose rock, paper or scissors")) {
+                        i--;
+                    }
+                }
+
+                if (playerScore > cpuScore) {
+                    console.log("Winner: Player");
+                } else if (cpuScore > playerScore) {
+                    console.log("Winner: Computer");
+                } else {
+                    console.log("It's a draw.");
+                }
+            }
+
             function computerPlay () {
                 let cpuMove = Math.floor(Math.random() * 3) + 1;
                 
-                if(cpuMove === 1) {
-                    return "Rock";
+                if (cpuMove === 1) {
+                    return "rock";
                 } else if (cpuMove === 2) {
-                    return "Paper";
+                    return "paper";
                 } else {
-                    return "Scissors";
+                    return "scissors";
                 }
             }
 
-            // console.log(computerPlay());
-
-            // Function created using Function Expression
-            let gameRound = function (playerSelection, computerSelection) {
-                let playerSelectionCasing = playerSelection.toLowerCase();
-
-                if (playerSelectionCasing !== "rock" && playerSelectionCasing !== "paper" && playerSelectionCasing !== "scissors") {
-                    return "Please choose rock, paper or scissors";
-                } else if ((playerSelectionCasing === "rock" && computerSelection === "Scissors") || (playerSelectionCasing === "paper" && computerSelection === "Rock") || (playerSelectionCasing === "scissors" && computerSelection === "Paper")) {
-                    return "You win.";
-                } else if ((playerSelectionCasing === "rock" && computerSelection === "Paper") || (playerSelectionCasing === "paper" && computerSelection === "Scissors") || (playerSelectionCasing === "scissors" && computerSelection === "Rock")) {
-                    return "You lose.";
+            function roundPlay (playerSelection, computerSelection) {
+                let playerInput = playerSelection.toLowerCase();
+                // playerSelection = prompt("roundPlay: rock, paper or scissors").toLowerCase();
+                // console.log("roundPlay: playerSelection: ", playerSelection, "computerSelection: ", computerSelection);
+                if (playerInput !== "rock" && playerInput !== "paper" && playerInput !== "scissors") {
+                    return roundPlayResult = "Please choose rock, paper or scissors";
+                } else if ((playerInput === "rock" && computerSelection === "scissors") || (playerInput === "paper" && computerSelection === "rock") || (playerInput === "scissors" && computerSelection === "paper")) {
+                    return roundPlayResult = "You win.";
+                } else if ((playerInput === "rock" && computerSelection === "paper") || (playerInput === "paper" && computerSelection === "scissors") || (playerInput === "scissors" && computerSelection === "rock")) {
+                    return roundPlayResult = "You lose.";
                 } else {
-                    return "It's a draw.";
+                    return roundPlayResult = "It's a draw.";
                 }
             }
+            
+            // roundPlay(playerSelection, computerSelection);
+            // console.log("playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
+            // console.log("outside of function roundPlay: ", roundPlay(playerSelection, computerSelection));
 
-            // let playerSelection = "rock";
-            let computerSelection = computerPlay();
+            function roundScore() {
+                // console.log("game: roundPlayResult: ", roundPlayResult);
+                // console.log("game: playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
+                if (roundPlayResult === "You win.") {
+                    playerScore++;
+                } else if (roundPlayResult === "You lose.") {
+                    cpuScore++;
+                } 
+            }
 
-            console.log(gameRound("Rock", computerSelection));
-
+            game();
         </script>
     </body>
 </html>
