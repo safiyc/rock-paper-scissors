@@ -12,14 +12,14 @@
         
             function game () {
                 for (let i = 0; i < 5; i++) {
-                    let playerSelection = prompt("roundPlay: rock, paper or scissors");
+                    let playerSelection = prompt("roundPlay: rock, paper or scissors").toLowerCase();
                     let computerSelection = computerPlay();
                     roundPlay (playerSelection, computerSelection);
                     roundScore();
-                    console.log("Round: ", i + 1);
+                    console.warn("Round: ", i + 1);
                     console.log("playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
                     console.log("function roundPlay: ", roundPlay(playerSelection, computerSelection));
-                    console.log("roundPlayResult: ", roundPlayResult);
+                    console.warn("roundPlayResult: ", roundPlayResult);
                     console.log("playerScore: ", playerScore, "cpuScore: ", cpuScore);
                     
                     if (roundPlayResult === ("Please choose rock, paper or scissors")) {
@@ -49,14 +49,14 @@
             }
 
             function roundPlay (playerSelection, computerSelection) {
-                let playerInput = playerSelection.toLowerCase();
+                // playerSelection = playerSelection.toLowerCase();
                 // playerSelection = prompt("roundPlay: rock, paper or scissors").toLowerCase();
                 // console.log("roundPlay: playerSelection: ", playerSelection, "computerSelection: ", computerSelection);
-                if (playerInput !== "rock" && playerInput !== "paper" && playerInput !== "scissors") {
+                if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
                     return roundPlayResult = "Please choose rock, paper or scissors";
-                } else if ((playerInput === "rock" && computerSelection === "scissors") || (playerInput === "paper" && computerSelection === "rock") || (playerInput === "scissors" && computerSelection === "paper")) {
+                } else if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
                     return roundPlayResult = "You win.";
-                } else if ((playerInput === "rock" && computerSelection === "paper") || (playerInput === "paper" && computerSelection === "scissors") || (playerInput === "scissors" && computerSelection === "rock")) {
+                } else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) {
                     return roundPlayResult = "You lose.";
                 } else {
                     return roundPlayResult = "It's a draw.";
