@@ -4,14 +4,16 @@ let cpuScore = 0;
 let rounds = 0;
 
 const inputChoices = document.querySelectorAll(".input-choices");
+const reset = document.getElementById("reset");
 
 inputChoices.forEach(function (button) {
     button.addEventListener('click', function () {
         playerSelection = button.id;
     });
     button.addEventListener('click', game);
-
 });
+
+reset.addEventListener('click', resetGame);
 
 function game () {
     const computerSelection = computerPlay();
@@ -68,4 +70,17 @@ function roundScore() {
     } else if (playRoundResult === "You lose.") {
         cpuScore++;
     } 
+}
+
+function resetGame () {
+    rounds = 0;
+    playerScore = 0;
+    cpuScore = 0;
+
+    inputChoices.forEach(function (button) {
+        button.removeAttribute("disabled", "disabled");
+    });
+
+    console.error("playerScore: ", playerScore, "cpuScore: ", cpuScore);
+    console.error("rounds: ", rounds);
 }
