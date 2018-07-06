@@ -1,83 +1,23 @@
 <!DOCTYPE html>
 <html lang="en-us">
     <head>
+        <!-- <meta name="viewport" content="width=device=width, initial-scale=1"> -->
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="style.css">
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        <script>
-            // Why cant roundPlayResult, playerScore and cpuScore be nested inside function game()???
-            let roundPlayResult;
-            let playerScore = 0;
-            let cpuScore = 0;
-        
-            function game () {
-                for (let i = 0; i < 5; i++) {
-                    let playerSelection = prompt("roundPlay: rock, paper or scissors").toLowerCase();
-                    let computerSelection = computerPlay();
-                    roundPlay (playerSelection, computerSelection);
-                    roundScore();
-                    console.warn("Round: ", i + 1);
-                    console.log("playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
-                    console.log("function roundPlay: ", roundPlay(playerSelection, computerSelection));
-                    console.warn("roundPlayResult: ", roundPlayResult);
-                    console.log("playerScore: ", playerScore, "cpuScore: ", cpuScore);
-                    
-                    if (roundPlayResult === ("Please choose rock, paper or scissors")) {
-                        i--;
-                    }
-                }
+        <button class="input-choices" id="rock">Rock</button>
+        <button class="input-choices" id="paper">Paper</button>
+        <button class="input-choices" id="scissors">Scissors</button>
 
-                if (playerScore > cpuScore) {
-                    console.log("Winner: Player");
-                } else if (cpuScore > playerScore) {
-                    console.log("Winner: Computer");
-                } else {
-                    console.log("It's a draw.");
-                }
-            }
+        <!-- <div>
+            <div>Results</div>
+            <div>Player</div>
+            <div>Computer</div>
+        </div>
+        <div class="hidden" id="message-winner"></div> -->
 
-            function computerPlay () {
-                let cpuMove = Math.floor(Math.random() * 3) + 1;
-                
-                if (cpuMove === 1) {
-                    return "rock";
-                } else if (cpuMove === 2) {
-                    return "paper";
-                } else {
-                    return "scissors";
-                }
-            }
-
-            function roundPlay (playerSelection, computerSelection) {
-                // playerSelection = playerSelection.toLowerCase();
-                // playerSelection = prompt("roundPlay: rock, paper or scissors").toLowerCase();
-                // console.log("roundPlay: playerSelection: ", playerSelection, "computerSelection: ", computerSelection);
-                if (playerSelection !== "rock" && playerSelection !== "paper" && playerSelection !== "scissors") {
-                    return roundPlayResult = "Please choose rock, paper or scissors";
-                } else if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
-                    return roundPlayResult = "You win.";
-                } else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) {
-                    return roundPlayResult = "You lose.";
-                } else {
-                    return roundPlayResult = "It's a draw.";
-                }
-            }
-            
-            // roundPlay(playerSelection, computerSelection);
-            // console.log("playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
-            // console.log("outside of function roundPlay: ", roundPlay(playerSelection, computerSelection));
-
-            function roundScore() {
-                // console.log("game: roundPlayResult: ", roundPlayResult);
-                // console.log("game: playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
-                if (roundPlayResult === "You win.") {
-                    playerScore++;
-                } else if (roundPlayResult === "You lose.") {
-                    cpuScore++;
-                } 
-            }
-
-            game();
-        </script>
+        <script src="script.js"></script>
     </body>
 </html>
