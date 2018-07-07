@@ -1,10 +1,14 @@
-let playRoundResult;
-let playerScore = 0;
-let cpuScore = 0;
-let rounds = 0;
-
 const inputChoices = document.querySelectorAll(".input-choices");
 const reset = document.getElementById("reset");
+// const roundResultDisplay = document.getElementById("round-result");
+
+
+let roundResult;
+let playerScore = 0;
+let cpuScore = 0;
+let rounds = 1;
+
+// roundResultDisplay.textContent = "this is a test";
 
 inputChoices.forEach(function (button) {
     button.addEventListener('click', function () {
@@ -16,30 +20,38 @@ inputChoices.forEach(function (button) {
 reset.addEventListener('click', resetGame);
 
 function game () {
+    rounds++;
+
     const computerSelection = computerPlay();
     
     playRound (playerSelection, computerSelection);
     roundScore();
-    console.log("playerSelection: ", playerSelection, " computerSelection: ", computerSelection);
-    console.log("function playRound: ", playRound(playerSelection, computerSelection));
-    console.warn("playRoundResult: ", playRoundResult);
-    console.log("playerScore: ", playerScore, "cpuScore: ", cpuScore);
     
-    rounds += 1;
-    console.log("rounds: ", rounds);
-
+    document.getElementById("round-result").innerHTML = roundResult;
+    document.getElementById("player-move").innerHTML = playerSelection;
+    document.getElementById("computer-move").innerHTML = computerSelection;
+    document.getElementById("round").innerHTML = rounds;
+    document.getElementById("player-score").innerHTML = playerScore;
+    document.getElementById("computer-score").innerHTML = cpuScore;
+    
     if(rounds >= 5) {
+        const playerWins = "You win the game. Reset to play again.";
+        const cpuWins = "You lose the game. Answer some questions as a punishment.";
+        
         inputChoices.forEach(function (button) {
             button.setAttribute("disabled", "disabled");
         });
         if (playerScore > cpuScore) {
-            console.warn("Winner: Player");
+            document.getElementById("message-winner").innerHTML = playerWins;
         } else if (cpuScore > playerScore) {
-            console.warn("Winner: Computer");
+            document.getElementById("message-winner").innerHTML = cpuWins;
         } else {
             console.warn("It's a draw.");
+            rounds--;  // need to get this to work
+            document.getElementById("round").innerHTML = rounds;
         }   
     }
+
 }
 
 function computerPlay () {
@@ -56,24 +68,24 @@ function computerPlay () {
 
 function playRound (playerSelection, computerSelection) {
     if ((playerSelection === "rock" && computerSelection === "scissors") || (playerSelection === "paper" && computerSelection === "rock") || (playerSelection === "scissors" && computerSelection === "paper")) {
-        return playRoundResult = "You win.";
+        return roundResult = "You Win";
     } else if ((playerSelection === "rock" && computerSelection === "paper") || (playerSelection === "paper" && computerSelection === "scissors") || (playerSelection === "scissors" && computerSelection === "rock")) {
-        return playRoundResult = "You lose.";
+        return roundResult = "You Lose";
     } else {
-        return playRoundResult = "It's a draw.";
+        return roundResult = "Draw";
     }
 }
    
 function roundScore() {
-    if (playRoundResult === "You win.") {
+    if (roundResult === "You Win") {
         playerScore++;
-    } else if (playRoundResult === "You lose.") {
+    } else if (roundResult === "You Lose") {
         cpuScore++;
     } 
 }
 
 function resetGame () {
-    rounds = 0;
+    rounds = 1;
     playerScore = 0;
     cpuScore = 0;
 
@@ -81,6 +93,17 @@ function resetGame () {
         button.removeAttribute("disabled", "disabled");
     });
 
-    console.error("playerScore: ", playerScore, "cpuScore: ", cpuScore);
-    console.error("rounds: ", rounds);
+    roundResult = "";
+    playerSelection = "";
+    computerSelection = "";
+    
+    document.getElementById("round-result").innerHTML = roundResult;
+    document.getElementById("player-move").innerHTML = playerSelection;
+    document.getElementById("computer-move").innerHTML = computerSelection;
+    document.getElementById("round").innerHTML = rounds;
+    document.getElementById("player-score").innerHTML = playerScore;
+    document.getElementById("computer-score").innerHTML = cpuScore;
+
+    let removeMessage = document.getElementById("message-winner");
+    removeMessage.classList.add("hidden");
 }

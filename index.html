@@ -7,18 +7,28 @@
         <title>Rock Paper Scissors</title>
     </head>
     <body>
-        <button class="input-choices" id="rock">Rock</button>
-        <button class="input-choices" id="paper">Paper</button>
-        <button class="input-choices" id="scissors">Scissors</button>
+        <div class="choices-container">
+            <button class="input-choices" id="rock">Rock</button>
+            <button class="input-choices" id="paper">Paper</button>
+            <button class="input-choices" id="scissors">Scissors</button>
+        </div>
 
         <button id="reset">Reset</button>
 
-        <!-- <div>
-            <div>Results</div>
-            <div>Player</div>
-            <div>Computer</div>
+        <div>
+            <div>Round Result: &nbsp <span id="round-result"></span></div>
+            <div>Player's Move: &nbsp <span id="player-move"></span>
+            </div>
+            <div>Computer's Move: &nbsp <span id="computer-move"></span></div>
         </div>
-        <div class="hidden" id="message-winner"></div> -->
+
+        <div>
+            <div>Round: &nbsp <span id="round"></span></div>
+            <div>Player's Score: &nbsp <span id="player-score"></span></div>
+            <div>Computer's Score: &nbsp <span id="computer-score"></span></div>
+        </div>
+
+        <div id="message-winner"></div>
 
         <script src="script.js"></script>
     </body>

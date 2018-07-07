@@ -1,0 +1,24 @@
+html,body {
+    height: 100%;
+}
+
+body {
+    background: linear-gradient(170deg, skyblue, darkblue);
+}
+
+button {
+    border: none;
+    background-color: green;
+    outline: none;
+    font-size: 25px;
+    margin: 5px; 
+}
+
+button:hover:enabled {
+    background-color: darkgreen;
+    color: white;
+}
+
+.hidden {
+    display: none;
+}
