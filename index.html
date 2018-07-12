@@ -15,8 +15,12 @@
                     <button class="input-choices" id="rock">
                         <img id="img-rock" src="./img/rock-gray.png" alt="rock">
                     </button>
-                    <button class="input-choices" id="paper"><img id="img-paper" src="./img/paper-gray.png" alt="paper"></button>
-                    <button class="input-choices" id="scissors"><img id="img-scissors" src="./img/scissors-gray.png" alt="scissors"></button>
+                    <button class="input-choices" id="paper">
+                        <img id="img-paper" src="./img/paper-gray.png" alt="paper">
+                    </button>
+                    <button class="input-choices" id="scissors">
+                        <img id="img-scissors" src="./img/scissors-gray.png" alt="scissors">
+                    </button>
                 </div>
                 <div>Round Result: &nbsp <span id="round-result"></span></div>
                 <div class="move-reset-score">
@@ -25,14 +29,16 @@
                         <p>Move: &nbsp <span id="player-move"></span></p>
                         <p>Score: &nbsp <span id="player-score"></span></p>
                     </div>
-                    <button id="reset"><p>reset</p></button> 
+                    <button id="reset">
+                        <p>reset</p>
+                    </button> 
                     <div class="info-box">
                         <p class="players">Computer</p>
                         <p>Move: &nbsp <span id="computer-move"></span></p>
                         <p>Score: &nbsp <span id="computer-score"></span></p>
                     </div>
                 </div>
-                <div class="winner-box"><p id="winner-display"></p></div>
+                <div id="winner-box"><p id="winner-display"></p></div>
             </div>
         </div>
         <script src="script.js"></script>

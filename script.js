@@ -77,7 +77,7 @@ function roundCount () {
 
     if (rounds === 5) {
         const playerWins = "You win the game. Reset to play again.";
-        const cpuWins = "You lose the game. Answer some questions to reset the game.";
+        const cpuWins = "You lose the game. Reset to play again.";
         const draw = "It's a draw. Play another round.";
 
         inputChoices.forEach(function (button) {
@@ -88,6 +88,8 @@ function roundCount () {
 
         if (playerScore === cpuScore) {
             document.getElementById("winner-display").innerHTML = draw;
+            document.getElementById("winner-box").style.backgroundColor = "rgba(255, 250, 158, 0.65)";
+            document.getElementById("winner-box").style.boxShadow = "0 0 12px 4px rgba(255, 250, 158, 0.5)";
 
             rounds = 4;
 
@@ -98,8 +100,12 @@ function roundCount () {
         
         if (playerScore > cpuScore) {
             document.getElementById("winner-display").innerHTML = playerWins;
+            document.getElementById("winner-box").style.backgroundColor = "rgba(255, 250, 158, 0.65)";
+            document.getElementById("winner-box").style.boxShadow = "0 0 12px 4px rgba(255, 250, 158, 0.5)";
         } else if (playerScore < cpuScore) {
             document.getElementById("winner-display").innerHTML = cpuWins;
+            document.getElementById("winner-box").style.backgroundColor = "rgba(255, 250, 158, 0.65)";
+            document.getElementById("winner-box").style.boxShadow = "0 0 12px 4px rgba(255, 250, 158, 0.5)";
         } 
     }
 }
@@ -122,6 +128,8 @@ function resetGame () {
     playerSelection = "";
     computerSelection = "";
     winnerDisplay.classList.add("hidden");
+    document.getElementById("winner-box").style.boxShadow = "";
+    document.getElementById("winner-box").style.backgroundColor = "";
 
     inputChoices.forEach(function (button) {
         button.removeAttribute("disabled", "disabled");
