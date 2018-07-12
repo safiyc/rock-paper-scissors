@@ -9,7 +9,6 @@ let computerSelection;
 let roundResult;
 let rounds;
 
-
 function onPageLoad () {
     rounds = 0;
     roundDisplayed = 1;
@@ -76,7 +75,7 @@ function roundCount () {
         roundDisplayed++;
     }
 
-    if(rounds === 5) {
+    if (rounds === 5) {
         const playerWins = "You win the game. Reset to play again.";
         const cpuWins = "You lose the game. Answer some questions to reset the game.";
         const draw = "It's a draw. Play another round.";

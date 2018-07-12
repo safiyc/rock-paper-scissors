@@ -1,24 +1,182 @@
-html,body {
-    height: 100%;
+html {
+    background: radial-gradient(rgb(144, 186, 208), rgb(131, 36, 150));
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
-body {
-    background: linear-gradient(170deg, skyblue, darkblue);
+body, html {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: Arial;
+    font-weight: bold;
+}
+
+.choices-box {
+    display: flex;
+    justify-content: center;
+}
+
+#reset {
+    background: rgb(255, 97, 97);
+    border: 6px solid black;
+    color: white;
+}
+
+#reset:hover {
+    background: red;
+    border: 2px solid black;
+    font-size: 30px;
+    font-weight: bolder;
+    transition: all .3s ease;
+    transform: scale(1.1);
+}
+
+#reset:active {
+    background-color: black;
+    transition: all .2s ease;
+    transform: scale(1.2);
 }
 
 button {
+    position: relative;
+    background: black;
     border: none;
-    background-color: green;
+    border-radius: 100px;
     outline: none;
-    font-size: 25px;
-    margin: 5px; 
+    margin: 30px;
+    height: 100px;
+    width: 100px; 
 }
 
 button:hover:enabled {
-    background-color: darkgreen;
-    color: white;
+    background: white;
+    border: 6px solid black;
+    transition: all .2s ease;
+    transform: rotate(15deg);
+}
+
+#rock:active, #paper:active, #scissors:active {
+    background-color: green;
+    border: 2px solid black;
+    transition: all .3s ease;
+    transform: scale(1.1);
+}
+
+button:active > img {
+    transition: all .05s ease;
+    transform: scale(1.15);
+}
+
+#rock:active:disabled, #paper:active:disabled, #scissors:active:disabled {
+    background-color: gray;
+    transition: all .03s ease;
+    transform: scale(1.02);
+    border: none;
+}
+
+button:disabled {
+    background-color: gray;
+}
+
+button:disabled > img {
+    transform: scale(1);
+}
+
+#img-rock {
+    position: absolute;
+    top: 10px;
+    left: 4px;
+    height: 100px;
+    width: 100px;
+}
+
+#img-paper {
+    position: absolute;
+    top: -8px;
+    left: 10px;
+    height: 105px;
+    width: 105px;
+}
+
+#img-scissors {
+    position: absolute;
+    top: -5px;
+    left: 4px;
+    height: 109px;
+    width: 104px;
+}
+
+.wrapper {
+    background-color: rgba(253, 247, 133, 0.4);
+    border: 3px solid rgba(0, 0, 0, .9);
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 0 10px 3px black;
+    margin: auto;
+    padding: 0 10px 10px 10px;
+    height: 90vh;
+    width: 680px;
+    text-align: center;
+    overflow: hidden;
 }
 
 .hidden {
     display: none;
+}
+
+.game-title {
+    background: rgba(255, 253, 219, .9);
+    border: 1px solid  rgba(0, 0, 0, .75);
+    border-bottom: 3px solid;
+    border-radius: 0px 0px 24px 24px;
+    box-shadow: 0 1px 10px 3px black;
+    margin: -2px auto 0;
+    height: 65px;
+    width: 515px;
+    line-height: 65px;
+    font-size: 45px;
+}
+
+/* .game-title:hover {
+    box-shadow: 1px 2px 25px 4px black;
+    transition: all .02 ease-in;
+} */
+
+.content-box {
+    margin: 20px auto 10px;
+}
+
+.move-reset-score {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.info-box {
+    background: rgba(255, 253, 219, .1);
+    box-shadow: 0 0 1px 1px black;
+    margin-top: -2px;
+    padding: 20px;
+    height: 90px;
+    width: 180px;
+    text-align: left;
+}
+
+.players {
+    margin-top: 5px;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+button#reset {
+    margin-top: 10px;
+}
+
+.winner-box {
+    background: rgba(255, 253, 219, .2);
+    box-shadow: 0 0 1px 1px black;
+    margin: 10px auto;
+    padding: 5px;
+    height: 45px;
+    width: 590px;
 }
