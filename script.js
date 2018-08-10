@@ -139,3 +139,6 @@ function resetGame () {
 }
 
 reset.addEventListener('click', resetGame);
+
+let date = new Date();
+document.getElementById("copyright").textContent = date.getFullYear();
