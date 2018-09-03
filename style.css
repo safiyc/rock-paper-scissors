@@ -146,6 +146,10 @@ button:disabled > img {
     transform: scale(1.2);
 }
 
+#reset > p {
+    margin: 0;
+}
+
 button#reset {
     margin-top: 10px;
 }
@@ -182,10 +186,23 @@ button#reset {
 footer {
     font-weight: normal;
     text-align: center;
-    margin-top: 35px;
+    position: fixed;
+    bottom: 5px;
+    width: 100%;
 }
 
 a {
     color: black;
     text-decoration: none;
+}
+
+@media only screen and (max-width: 770px) {
+    html {
+        background-repeat: repeat;
+    }
+
+    .wrapper {
+        margin-top: 45vh;
+        margin-bottom: 10vh;
+    }
 }

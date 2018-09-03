@@ -1,7 +1,7 @@
 # Rock Paper Scissors
-### By Safiy Cham
+#### By Safiy Cham
 
-## Technologies used: Javascript, HTML, CSS
+## Technologies: Javascript, HTML, CSS
 
 ## Description
 
@@ -22,18 +22,18 @@ This rock, paper, scissors program done in JavaScript lets a user play the popul
 
 ## Links
 
-### [Project's Website](https://safiyc.github.io/Rock-Paper-Scissors)
+#### Launch Program - [Rock Paper Scissors](https://safiyc.github.io/rock-paper-scissors)
 
-### [Github Repo](https://github.com/safiyc/Rock-Paper-Scissors.git)
+#### [Github Repo](https://github.com/safiyc/Rock-Paper-Scissors.git)
 
-### [Portfolio Website](http://www.safiycham.com/)
+#### [Portfolio](http://www.safiycham.com/)
 
 ## Contact Info
 
-### csafiy@yahoo.com
+#### csafiy@yahoo.com
 
 ## License
 
-This software is licensed under the MIT licensed.
+This software is licensed under the MIT License
 
 Copyright 2018
