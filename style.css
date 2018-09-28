@@ -8,38 +8,42 @@ body, html {
     margin: 0;
     padding: 0;
     min-height: 100vh;
-    min-width: 640px;
+    font-size: 16px;
     font-family: Arial;
     font-weight: bold;
 }
 
 .wrapper {
     background-color: rgba(253, 247, 133, 0.4);
-    border: 3px solid rgba(0, 0, 0, .9);
-    border-radius: 0 0 10px 10px;
-    box-shadow: 0 0 10px 3px black;
+    border: .1875rem solid rgba(0, 0, 0, .9);
+    border-radius: 0 0 .625rem .625rem;
+    -webkit-box-shadow: 0 0 .625rem .1875rem black;
+    -moz-box-shadow: 0 0 .625rem .1875rem black;
+    box-shadow: 0 0 .625rem .1875rem black;
     margin: auto;
-    padding: 0 10px 10px 10px;
-    height: 520px;
-    width: 610px;
+    padding: 0 .625rem .625rem .625rem;
+    height: 32.5rem;
+    width: 38.125rem;
     text-align: center;
 }
 
 .game-title {
     background: rgba(255, 253, 219, .9);
-    border: 1px solid  rgba(0, 0, 0, .75);
-    border-bottom: 3px solid;
-    border-radius: 0px 0px 24px 24px;
-    box-shadow: 0 1px 10px 3px black;
-    margin: -2px auto 0;
-    height: 65px;
-    width: 515px;
-    line-height: 65px;
-    font-size: 45px;
+    border: .0625rem solid  rgba(0, 0, 0, .75);
+    border-bottom: .1875rem solid;
+    border-radius: 0 0 1.5rem 1.5rem;
+    -webkit-box-shadow: 0 0 .625rem .1875rem black;
+    -moz-box-shadow: 0 0 .625rem .1875rem black;
+    box-shadow: 0 .0625rem .625rem .1875rem black;
+    margin: -.125rem auto 0;
+    height: 4.0625rem;
+    width: 32.1875rem;
+    line-height: 4.0625rem;
+    font-size: 2.8125rem;
 }
 
 .content-box {
-    margin: 20px auto 10px;
+    margin: 1.25rem auto .625rem;
 }
 
 .choices-box {
@@ -49,52 +53,50 @@ body, html {
 
 #img-rock {
     position: absolute;
-    top: 2px;
-    left: 4px;
-    height: 95px;
-    width: 95px;
+    top: .125rem;
+    left: .25rem;
+    height: 5.9375rem;
+    width: 5.9375rem;
 }
 
 #img-paper {
     position: absolute;
-    top: -7px;
-    left: 5px;
-    height: 102px;
-    width: 102px;
+    top: -.4375rem;
+    left: .3125rem;
+    height: 6.375rem;
+    width: 6.375rem;
 }
 
 #img-scissors {
     position: absolute;
-    top: -5px;
-    left: 4px;
-    height: 109px;
-    width: 104px;
+    top: -.3125rem;
+    left: .25rem;
+    height: 6.8125rem;
+    width: 6.5rem;
 }
 
-button {
+.input-choices {
     position: relative;
     background: black;
     border: none;
-    border-radius: 100px;
+    border-radius: 6.25rem;
     outline: none;
-    margin: 30px;
-    height: 100px;
-    width: 100px; 
+    margin: 1.875rem;
+    height: 6.25rem;
+    width: 6.25rem; 
 }
 
-button:hover:enabled {
+.input-choices:hover:enabled {
     background: white;
-    border: 6px solid black;
+    border: .375rem solid black;
     transition: all .2s ease;
     transition-delay: .07s;
     transform: rotate(-30deg);
 }
 
-/* why grab id instead of 'button' tags? Ans... */
-/* ...some properties dont work when 'button:active'. Not sure why. */
 #rock:active, #paper:active, #scissors:active {
     background-color: green;
-    border: 2px solid black;
+    border: .125rem solid black;
     transition: all .1s ease;
     transform: scale(1.15);
 }
@@ -122,19 +124,26 @@ button:disabled > img {
 .move-reset-score {
     display: flex;
     justify-content: center;
-    margin-top: 20px;
+    margin-top: 1.25rem;
 }
 
 #reset {
+    position: relative;
     background: rgb(255, 97, 97);
-    border: 6px solid black;
     color: white;
+    border: .375rem solid black;
+    border-radius: 6.25rem;
+    outline: none;
+    margin: 1.875rem;
+    margin-top: .625rem;
+    height: 6.25rem;
+    width: 6.25rem;
 }
 
 #reset:hover {
     background: red;
-    border: 2px solid black;
-    font-size: 30px;
+    border: .125rem solid black;
+    font-size: 1.875rem;
     font-weight: bolder;
     transition: all .3s ease;
     transform: scale(1.1);
@@ -150,22 +159,32 @@ button:disabled > img {
     margin: 0;
 }
 
-button#reset {
-    margin-top: 10px;
+.info-box-player {
+    background: rgba(255, 253, 219, .1);
+    -webkit-box-shadow: 0 0 .0625rem .0625rem black;
+    -moz-box-shadow: 0 0 .0625rem .0625rem black;
+    box-shadow: 0 0 .0625rem .0625rem black;
+    margin-top: -.125rem;
+    padding: 1.25rem;
+    height: 5.625rem;
+    width: 11.25rem;
+    text-align: left;
 }
 
-.info-box {
+.info-box-cpu {
     background: rgba(255, 253, 219, .1);
-    box-shadow: 0 0 1px 1px black;
-    margin-top: -2px;
-    padding: 20px;
-    height: 90px;
-    width: 180px;
+    -webkit-box-shadow: 0 0 .0625rem .0625rem black;
+    -moz-box-shadow: 0 0 .0625rem .0625rem black;
+    box-shadow: 0 0 .0625rem .0625rem black;
+    margin-top: -.125rem;
+    padding: 1.25rem;
+    height: 5.625rem;
+    width: 11.25rem;
     text-align: left;
 }
 
 .players {
-    margin-top: 5px;
+    margin-top: .3125rem;
     text-align: center;
     text-transform: uppercase;
 }
@@ -176,10 +195,12 @@ button#reset {
 
 #winner-box {
     background: rgba(255, 253, 219, .2);
-    box-shadow: 0 0 1px 1px black;
-    margin: 10px auto;
-    padding: 5px;
-    height: 45px;
+    -webkit-box-shadow: 0 0 .0625rem .0625rem black;
+    -moz-box-shadow: 0 0 .0625rem .0625rem black;
+    box-shadow: 0 0 .0625rem .0625rem black;
+    margin: .625rem auto;
+    padding: .3125rem;
+    height: 2.8125rem;
     width: 590px;
 }
 
@@ -187,7 +208,7 @@ footer {
     font-weight: normal;
     text-align: center;
     position: fixed;
-    bottom: 5px;
+    bottom: .3125rem;
     width: 100%;
 }
 
@@ -197,12 +218,97 @@ a {
 }
 
 @media only screen and (max-width: 770px) {
-    html {
-        background-repeat: repeat;
+    .wrapper {
+        margin-top: unset;
+        margin-bottom: unset;
+        width: unset;
     }
 
-    .wrapper {
-        margin-top: 45vh;
-        margin-bottom: 10vh;
+    .game-title {
+        width: unset;
+        height: unset;
+        font-size: 1.65rem;
+    }
+
+    .choices-box {
+        justify-content: space-between;
+        margin: 1rem auto;
+        padding: 0 .75rem;
+    }
+
+    .input-choices {
+        margin: .25rem;
+        width: 4.5rem;
+        height: 4.5rem;
+        border-radius: 3rem;
+    }
+
+    #img-rock {
+        top: .125rem;
+        left: .25rem;
+        height: 4.4375rem;
+        width: 4.4375rem;
+    }
+    
+    #img-paper {
+        top: -.4375rem;
+        left: .3125rem;
+        height: 4.875rem;
+        width: 4.875rem;
+    }
+    
+    #img-scissors {
+        top: -.3125rem;
+        left: .25rem;
+        height: 5.3125rem;
+        width: 5rem;
+    }
+    
+    #rock:active, #paper:active, #scissors:active {
+        transform: scale(1.1);
+    }
+
+    .move-reset-score {
+        position: relative;
+    }
+
+    .info-box-player {
+        order: 1;
+        margin-right: .15rem;
+    }
+
+    .info-box-cpu {
+        order: 2;
+        margin-left: .15rem;
+    }
+
+    .players {
+        text-align: left;
+    }
+
+    #reset {
+        position: absolute;
+        order: 3;
+        margin: 12.7rem auto 0;
+        border-radius: unset;
+        width: 4rem;
+        height: 4rem;
+    }
+
+    #reset:hover {
+        font-size: unset;
+        transform: scale(1);
+    }
+
+    #reset:active {
+        transform: scale(1);
+    }
+
+    #winner-box {
+        width: unset;
+    }
+
+    #winner-display {
+        font-size: .925rem;
     }
 }

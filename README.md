@@ -16,7 +16,6 @@ This rock, paper, scissors program done in JavaScript lets a user play the popul
 
 ## Pending Tasks
 
-* Responsive Design, Media Queries
 * Modify code to ES6
 * DRY
 
